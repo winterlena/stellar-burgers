@@ -51,7 +51,7 @@ const App = () => {
             </ProtectedRoute>
           }
         />
-        {/* <Route path='/login' element={<Login />} /> */}
+
         <Route
           path='/register'
           element={
@@ -60,7 +60,7 @@ const App = () => {
             </ProtectedRoute>
           }
         />
-        {/* <Route path='/register' element={<Register />} /> */}
+
         <Route
           path='/forgot-password'
           element={
@@ -69,7 +69,7 @@ const App = () => {
             </ProtectedRoute>
           }
         />
-        {/* <Route path='/forgot-password' element={<ForgotPassword />} /> */}
+
         <Route
           path='/reset-password'
           element={
@@ -78,34 +78,34 @@ const App = () => {
             </ProtectedRoute>
           }
         />
-        {/* <Route path='/reset-password' element={<ResetPassword />} /> */}
+
         <Route
           path='/profile'
           element={
-            <ProtectedRoute onlyUnAuth>
+            <ProtectedRoute>
               <Profile />
             </ProtectedRoute>
           }
         />
-        {/* <Route path='/profile' element={<Profile />} /> */}
+
         <Route
           path='/profile/orders'
           element={
-            <ProtectedRoute onlyUnAuth>
+            <ProtectedRoute>
               <ProfileOrders />
             </ProtectedRoute>
           }
         />
-        {/* <Route path='/profile/orders' element={<ProfileOrders />} /> */}
+
         <Route
           path='/profile/orders/:number'
           element={
-            <ProtectedRoute onlyUnAuth>
+            <ProtectedRoute>
               <OrderInfo />
             </ProtectedRoute>
           }
         />
-        {/* <Route path='/profile/orders/:number' element={<OrderInfo />} /> */}
+
         <Route path='*' element={<NotFound404 />} />
       </Routes>
 
@@ -132,8 +132,8 @@ const App = () => {
           <Route
             path='/profile/orders/:number'
             element={
-              <ProtectedRoute onlyUnAuth>
-                <Modal title='Информаци по заказу' onClose={closeModal}>
+              <ProtectedRoute>
+                <Modal title='Информация по заказу' onClose={closeModal}>
                   <OrderInfo />
                 </Modal>
               </ProtectedRoute>

@@ -1,8 +1,3 @@
-// import { getUserApi, loginUserApi, TLoginData, TRegisterData } from '@api';
-// import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-// import { TUser } from '@utils-types';
-// import { getCookie, setCookie } from '../../utils/cookie';
-
 import {
   forgotPasswordApi,
   getUserApi,
@@ -17,81 +12,6 @@ import {
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { TUser } from '@utils-types';
 import { deleteCookie, getCookie, setCookie } from '../../utils/cookie';
-
-// export interface UserState {
-//   isAuthChecked: boolean; // флаг для статуса проверки токена пользователя
-//   isAuthenticated: boolean;
-//   user: TUser | null;
-//   isLoading: boolean;
-//   error: string | null | undefined;
-// }
-
-// const initialState: UserState = {
-//   isAuthChecked: false,
-//   isAuthenticated: false,
-//   user: null,
-//   isLoading: false,
-//   error: null
-// };
-
-// export const getUserFromApiThunk = createAsyncThunk(
-//   'user/getUser',
-//   async () => {
-//     const response = await getUserApi();
-//     return response;
-//   }
-// );
-
-// // export const loginUserThunk = createAsyncThunk(
-// //   'user/loginUser',
-// //   async (loginData: TLoginData, { rejectWithValue }) => {
-// //     const data = await loginUserApi(loginData);
-// //     if (!data?.success) {
-// //       return rejectWithValue(data);
-// //     }
-// //     setCookie('accessToken', data.accessToken);
-// //     localStorage.setItem('refreshToken', data.refreshToken);
-// //     return data.user;
-// //   }
-// // );
-// export const loginUserThunk = createAsyncThunk('user/loginUser', loginUserApi);
-
-// export const userSlice = createSlice({
-//   name: 'user',
-//   initialState,
-//   reducers: {},
-//   selectors: {
-//     getUserData: (state) => state.user,
-//     selectAuthChecked: (state) => state.isAuthChecked
-//   },
-//   extraReducers: (builder) => {
-//     builder
-//       .addCase(getUserFromApiThunk.pending, (state) => {})
-//       .addCase(getUserFromApiThunk.rejected, (state, action) => {})
-//       .addCase(getUserFromApiThunk.fulfilled, (state, action) => {
-//         state.user = action.payload.user;
-//       })
-//       .addCase(loginUserThunk.pending, (state) => {
-//         state.error = null;
-//         state.isLoading = true;
-//       })
-//       .addCase(loginUserThunk.fulfilled, (state, action) => {
-//         state.user = action.payload.user;
-//         state.isAuthChecked = true;
-//         state.isLoading = false;
-//       })
-//       .addCase(loginUserThunk.rejected, (state, action) => {
-//         state.error = action.error.message;
-//         state.isAuthChecked = false;
-//       });
-//   }
-// });
-
-// export const { getUserData, selectAuthChecked } = userSlice.selectors;
-
-// export default userSlice.reducer;
-
-// export const userReducer = userSlice.reducer;
 
 export const fetchGetUser = createAsyncThunk('authUser/fetchGetUser', (async) =>
   getUserApi()
