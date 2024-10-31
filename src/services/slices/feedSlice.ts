@@ -59,5 +59,3 @@ export const { selectOrders, selectLoading, selectState } = feedSlice.selectors;
 export default feedSlice.reducer;
 
 export const feedReducer = feedSlice.reducer;
-
-export const feed = feedSlice.name;

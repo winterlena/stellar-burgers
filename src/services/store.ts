@@ -9,16 +9,16 @@ import { ingredientsReducer } from './slices/ingredientSlice';
 import { burgerConstructorReducer } from './slices/burgerConstructorSlice';
 import { feedReducer } from './slices/feedSlice';
 import { orderReducer } from './slices/orderSlice';
-import { authUserSliceName, userReducer } from './slices/userSlice';
-import { ordersReducer, ordersSliceName } from './slices/profileOrderSlice';
+import { userReducer } from './slices/userSlice';
+import { ordersReducer } from './slices/profileOrderSlice';
 
-const rootReducer = combineReducers({
+export const rootReducer = combineReducers({
   ingredients: ingredientsReducer,
   burgerConstructor: burgerConstructorReducer,
   feed: feedReducer,
   order: orderReducer,
-  [authUserSliceName]: userReducer,
-  [ordersSliceName]: ordersReducer
+  authUser: userReducer,
+  userOrders: ordersReducer
 }); // Заменить на импорт настоящего редьюсера
 
 const store = configureStore({

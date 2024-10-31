@@ -6,7 +6,7 @@ export interface constructorState {
   ingredients: TConstructorIngredient[];
 }
 
-const initialState: constructorState = {
+export const initialState: constructorState = {
   bun: null,
   ingredients: []
 };

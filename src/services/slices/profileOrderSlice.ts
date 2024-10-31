@@ -43,6 +43,4 @@ const userOrdersSlice = createSlice({
 export const ordersReducer = userOrdersSlice.reducer;
 export default userOrdersSlice.reducer;
 
-export const ordersSliceName = userOrdersSlice.name;
-
 export const { getUserOrders, getUserOrdersError } = userOrdersSlice.selectors;
