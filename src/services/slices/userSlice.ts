@@ -83,7 +83,7 @@ export interface authUser {
   error: string | null;
 }
 
-const initialState: authUser = {
+export const initialState: authUser = {
   userData: null,
   isAuthChecked: false,
   loginUserRequest: false,
@@ -176,5 +176,3 @@ export const { getUserData, getAuthChecked, getLoginUserRequest, getError } =
   authUserSlice.selectors;
 
 export const { authChecked } = authUserSlice.actions;
-
-export const authUserSliceName = authUserSlice.name;

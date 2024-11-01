@@ -11,9 +11,7 @@ export const IngredientDetailsUI: FC<IngredientDetailsUIProps> = memo(
       <div className={styles.content}>
         <h2
           className={`text text_type_main-medium  pb-3 pt-10 ${styles.header}`}
-        >
-          Детали ингредиента
-        </h2>
+        />
         <img
           className={styles.img}
           alt='изображение ингредиента.'

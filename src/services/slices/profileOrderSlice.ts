@@ -7,7 +7,7 @@ export interface IOrdersState {
   error: string | null;
 }
 
-const initialState: IOrdersState = {
+export const initialState: IOrdersState = {
   orders: [],
   error: null
 };
@@ -42,7 +42,5 @@ const userOrdersSlice = createSlice({
 
 export const ordersReducer = userOrdersSlice.reducer;
 export default userOrdersSlice.reducer;
-
-export const ordersSliceName = userOrdersSlice.name;
 
 export const { getUserOrders, getUserOrdersError } = userOrdersSlice.selectors;

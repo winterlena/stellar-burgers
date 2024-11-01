@@ -10,7 +10,7 @@ export interface feedState {
   error: string | undefined | null;
 }
 
-const initialState: feedState = {
+export const initialState: feedState = {
   orders: [],
   total: 0,
   totalToday: 0,
@@ -59,5 +59,3 @@ export const { selectOrders, selectLoading, selectState } = feedSlice.selectors;
 export default feedSlice.reducer;
 
 export const feedReducer = feedSlice.reducer;
-
-export const feed = feedSlice.name;
