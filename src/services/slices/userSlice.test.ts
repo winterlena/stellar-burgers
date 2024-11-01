@@ -7,6 +7,7 @@ import {
   fetchLogoutUser,
   fetchRegisterUser,
   fetchUpdateUser,
+  initialState,
   userReducer
 } from './userSlice';
 
@@ -15,13 +16,6 @@ jest.mock('@api', () => ({
   setCookie: jest.fn(),
   getCookie: jest.fn()
 })); // подмена API для тестов
-
-const initialState = {
-  userData: null,
-  isAuthChecked: false,
-  loginUserRequest: false,
-  error: null
-};
 
 // Мокируем localStorage
 const localStorageMock = (function () {

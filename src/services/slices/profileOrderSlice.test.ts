@@ -1,12 +1,11 @@
 import { TOrder } from '@utils-types';
-import { fetchUserOrders, ordersReducer } from './profileOrderSlice';
+import {
+  fetchUserOrders,
+  initialState,
+  ordersReducer
+} from './profileOrderSlice';
 
 describe('userOrdersSlice', () => {
-  const initialState = {
-    orders: [] as TOrder[],
-    error: null
-  };
-
   const mockOrders: TOrder[] = [
     {
       _id: '1',

@@ -1,15 +1,12 @@
 import { getFeedsApi } from '../../utils/burger-api';
-import { feedReducer, feedState, getFeedsThunk } from './feedSlice';
+import {
+  feedReducer,
+  feedState,
+  getFeedsThunk,
+  initialState
+} from './feedSlice';
 
 jest.mock('../../utils/burger-api'); // подмена API для тестов
-
-const initialState: feedState = {
-  orders: [],
-  total: 0,
-  totalToday: 0,
-  isLoading: false,
-  error: null
-};
 
 describe('feedSlice', () => {
   it('should return the initial state', () => {
@@ -56,7 +53,7 @@ describe('feedSlice', () => {
         total: mockResponse.total,
         totalToday: mockResponse.totalToday,
         isLoading: false,
-        error: null,
+        error: null
       });
     });
 

@@ -2,16 +2,11 @@ import { getIngredientsApi } from '@api';
 import {
   getIngredientsThunk,
   ingredientsReducer,
-  ingredientState
+  ingredientState,
+  initialState
 } from './ingredientSlice';
 
-jest.mock('@api'); // подмена API для тестов
-
-const initialState: ingredientState = {
-  ingredients: [],
-  isLoading: false,
-  error: null
-};
+jest.mock('@api'); // подмена API для тестов;
 
 describe('ingredientsSlice', () => {
   it('should return the initial state', () => {

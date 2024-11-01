@@ -1,17 +1,30 @@
-import { TOrder } from '@utils-types';
 import {
   clearOrderState,
   fetchCreateOrder,
   getOrdersByNumberThunk,
+  initialState,
   orderDetailsState,
   orderReducer
 } from './orderSlice';
 import { configureStore } from '@reduxjs/toolkit';
 
-const initialState: orderDetailsState = {
-  orders: null,
-  isLoading: false,
-  error: null
+const mockOrder = {
+  _id: '1',
+  status: 'done',
+  name: 'Order1',
+  createdAt: '2024-01-01T00:00:00Z',
+  updatedAt: '2024-01-01T01:00:00Z',
+  number: 1,
+  ingredients: ['ingredient1', 'ingredient2']
+};
+const Order = {
+  _id: '2',
+  status: 'pending',
+  name: 'New Order',
+  createdAt: '2024-01-01T00:00:00Z',
+  updatedAt: '2024-01-01T01:00:00Z',
+  number: 2,
+  ingredients: ['ingredient3', 'ingredient4']
 };
 
 describe('orderSlice', () => {
@@ -31,16 +44,6 @@ describe('orderSlice', () => {
   });
 
   it('should handle fulfilled state for getOrdersByNumberThunk', () => {
-    const mockOrder = {
-      _id: '1',
-      status: 'done',
-      name: 'Order1',
-      createdAt: '2024-01-01T00:00:00Z',
-      updatedAt: '2024-01-01T01:00:00Z',
-      number: 1,
-      ingredients: ['ingredient1', 'ingredient2']
-    };
-
     const store = configureStore({
       reducer: {
         order: orderReducer
@@ -81,15 +84,7 @@ describe('orderSlice', () => {
   it('should handle fulfilled state for fetchCreateOrder', () => {
     const mockOrder = {
       success: true,
-      order: {
-        _id: '1',
-        status: 'pending',
-        name: 'New Order',
-        createdAt: '2024-01-01T00:00:00Z',
-        updatedAt: '2024-01-01T01:00:00Z',
-        number: 1,
-        ingredients: ['ingredient3', 'ingredient4']
-      },
+      order: Order,
       name: 'name'
     };
 
@@ -116,15 +111,7 @@ describe('orderSlice', () => {
 
   it('should clear order state', () => {
     const stateWithOrder = {
-      orders: {
-        _id: '1',
-        status: 'done',
-        name: 'Order1',
-        createdAt: '',
-        updatedAt: '',
-        number: 1,
-        ingredients: []
-      },
+      orders: mockOrder,
       isLoading: false,
       error: null
     };
